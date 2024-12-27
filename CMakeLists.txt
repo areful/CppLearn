@@ -18,3 +18,5 @@ add_executable(ModelDataParallel multi_thread/model_data_parallel.cpp)
 
 add_executable(MultiThread1 multi_thread/multi_thread1.cpp)
 add_executable(ProducerConsumer multi_thread/producer_consumer.cpp)
+
+add_executable(Traveler rapid/traveler.cpp)
