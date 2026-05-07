@@ -8,3 +8,4 @@ add_executable(Main main.cpp)
 
 #add_subdirectory(basic)
 add_subdirectory(qt-sample)
+add_subdirectory(qt-speech-sample)
