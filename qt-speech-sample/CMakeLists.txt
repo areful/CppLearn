@@ -5,6 +5,20 @@ project(Qt6SpeechDemo)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#
+# 更新包数据库
+# pacman -Syu
+#
+# 安装 Qt5 动态库 + Creator
+# pacman -S --needed mingw-w64-x86_64-qt5 mingw-w64-x86_64-qt-creator
+#
+# 或安装 Qt6 全套
+# pacman -S --needed mingw-w64-x86_64-qt6 mingw-w64-x86_64-qt6-tools
+#
+# 如需静态链接
+# pacman -S --needed mingw-w64-x86_64-qt5-static
+#
+
 # 让 CMake 找到 Qt6（适配 MSYS2）
 set(CMAKE_PREFIX_PATH "D:/msys64/mingw64")  # 改成你自己的 msys64 路径
 
