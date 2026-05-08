@@ -19,8 +19,24 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # pacman -S --needed mingw-w64-x86_64-qt5-static
 #
 
-# 让 CMake 找到 Qt6（适配 MSYS2）
-set(CMAKE_PREFIX_PATH "D:/msys64/mingw64")  # 改成你自己的 msys64 路径
+# ==============================
+# Windows 下强制指定 MSYS2 根目录（让 CMake 自动找到所有库：zlib、openssl、curl）
+# ==============================
+if (WIN32)
+    # 改成你自己的 msys64 路径
+    set(MSYS2_MINGW64 "C:/msys64/mingw64")
+
+    # 强制让 CMake 从这里找 OpenSSL、CURL、ZLIB
+    set(CMAKE_PREFIX_PATH ${MSYS2_MINGW64})
+    set(CMAKE_INCLUDE_PATH ${MSYS2_MINGW64}/include)
+    set(CMAKE_LIBRARY_PATH ${MSYS2_MINGW64}/lib)
+
+#    # 【关键】直接告诉 CMake OpenSSL 在哪里
+#    set(OPENSSL_ROOT_DIR ${MSYS2_MINGW64})
+#    set(OPENSSL_INCLUDE_DIR ${MSYS2_MINGW64}/include)
+#    set(OPENSSL_CRYPTO_LIBRARY ${MSYS2_MINGW64}/lib/libcrypto.dll.a)
+#    set(OPENSSL_SSL_LIBRARY ${MSYS2_MINGW64}/lib/libssl.dll.a)
+endif ()
 
 # 查找 Qt6 模块
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets TextToSpeech)
