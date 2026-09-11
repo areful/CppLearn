@@ -16,3 +16,6 @@ add_subdirectory(qt-sample)
 add_subdirectory(qt-speech-sample)
 add_subdirectory(qt-serialport-sample)
 add_subdirectory(qt-serialport-debugger)
+
+# add test app
+add_subdirectory(test)
