@@ -29,4 +29,7 @@ add_subdirectory(test)
 # 自定义EventBus示例
 add_subdirectory(src/lib/custom_eventbus)
 
+# 直接添加本地子目录（eventpp 是 INTERFACE 库，无需编译）
+add_subdirectory(third_party/eventpp)
+
 add_subdirectory(src/lib/eventpp)
