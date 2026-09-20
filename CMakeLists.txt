@@ -28,3 +28,5 @@ add_subdirectory(test)
 
 # 自定义EventBus示例
 add_subdirectory(src/lib/custom_eventbus)
+
+add_subdirectory(src/lib/eventpp)
