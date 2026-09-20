@@ -9,6 +9,12 @@ if (WIN32)
     set(Qt6_DIR "C:/msys64/mingw64/lib/cmake/Qt6")
 endif ()
 
+# ===================== 公共 utils 引入（核心）=====================
+set(UTILS_DIR "${CMAKE_SOURCE_DIR}/src/utils")
+include_directories(${UTILS_DIR})
+file(GLOB UTILS_FILES ${UTILS_DIR}/*.cpp)
+# =================================================================
+
 add_executable(Main main.cpp)
 
 #add_subdirectory(basic)
@@ -19,3 +25,6 @@ add_subdirectory(qt-serialport-debugger)
 
 # add test app
 add_subdirectory(test)
+
+# 自定义EventBus示例
+add_subdirectory(src/lib/custom_eventbus)
