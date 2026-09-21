@@ -12,8 +12,22 @@ set(CMAKE_CXX_STANDARD 17)
 #)
 #FetchContent_MakeAvailable(eventpp)
 
-add_executable(EventPpDemo eventpp_sample.cpp)
-target_link_libraries(EventPpDemo PRIVATE eventpp::eventpp)
+function(add_event_exe target src)
+    add_executable(${target} ${src} ${UTILS_FILES})
+    target_link_libraries(${target} PRIVATE eventpp::eventpp)
+endfunction()
 
-add_executable(EventPpDemo2 eventpp_sample2.cpp ${UTILS_FILES})
-target_link_libraries(EventPpDemo2 PRIVATE eventpp::eventpp)
+# 基础用法示例
+add_event_exe(EventPpDemo1 eventpp_sample.cpp)
+
+# 简单示例
+add_event_exe(EventPpDemo2 eventpp_sample2.cpp)
+
+# 泛型事件示例
+add_event_exe(EventPpDemo3 eventpp_sample3.cpp)
+
+# 泛型，以类型本身作为 key（真正的"按数据类型分发"）
+add_event_exe(EventPpDemo4 eventpp_sample4.cpp)
+
+# 泛型 + 单例模式
+add_event_exe(EventPpDemo5 eventpp_sample5.cpp)
