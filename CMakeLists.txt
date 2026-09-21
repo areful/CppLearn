@@ -17,6 +17,9 @@ file(GLOB UTILS_FILES ${UTILS_DIR}/*.cpp)
 
 add_executable(Main main.cpp)
 
+# add test app
+add_subdirectory(basic/std)
+
 #add_subdirectory(basic)
 add_subdirectory(qt-sample)
 add_subdirectory(qt-speech-sample)
