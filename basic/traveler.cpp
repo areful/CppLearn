@@ -7,6 +7,8 @@
 #include <atomic>
 #include <algorithm>
 
+#include "set_console_output_cp.h"
+
 class Traveler {
 public:
     std::string name;
@@ -14,7 +16,8 @@ public:
     size_t currentPoint;
 
     Traveler(const std::string &name, const std::vector<int> &route)
-            : name(name), route(route), currentPoint(0) {}
+        : name(name), route(route), currentPoint(0) {
+    }
 
     // 判断旅行者是否到达终点
     bool isAtEnd() const {
@@ -26,7 +29,7 @@ public:
         if (currentPoint < route.size()) {
             int travelTime = route[currentPoint];
             std::cout << name << " 开始从点 " << currentPoint
-                      << " 出发，预计耗时 " << travelTime << " 秒\n";
+                    << " 出发，预计耗时 " << travelTime << " 秒\n";
             std::flush(std::cout);
             std::this_thread::sleep_for(std::chrono::seconds(travelTime));
             currentPoint++;
@@ -86,11 +89,13 @@ void syncTravel(std::vector<Traveler> &travelers) {
 }
 
 int main() {
+    init_console_output();
+
     // 定义旅行者及其路径
     std::vector<Traveler> travelers = {
-            {"旅行者A", {2, 3, 1}},
-            {"旅行者B", {1, 2, 3}},
-            {"旅行者C", {3, 1, 2}},
+        {"旅行者A", {2, 3, 1}},
+        {"旅行者B", {1, 2, 3}},
+        {"旅行者C", {3, 1, 2}},
     };
 
     // 开始同步旅行

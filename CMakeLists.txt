@@ -17,7 +17,8 @@ file(GLOB UTILS_FILES ${UTILS_DIR}/*.cpp)
 
 add_executable(Main main.cpp)
 
-# add test app
+# add basic apps
+add_subdirectory(basic)
 add_subdirectory(basic/std)
 
 #add_subdirectory(basic)
