@@ -12,3 +12,7 @@ add_basic_exe(CppStdSample_weak_ptr weak_ptr_sample.cpp)
 add_basic_exe(CppStdSample_lock_expired1 lock_expired_sample.cpp)
 add_basic_exe(CppStdSample_lock_expired2 lock_expired_sample2.cpp)
 add_basic_exe(CppStdSample_lock_expired3 lock_expired_sample3.cpp)
+
+add_basic_exe(CppStdSample_shared_ptr_this shared_ptr_this.cpp)
+add_basic_exe(CppStdSample_shared_ptr_this2 shared_ptr_this2.cpp)
+add_basic_exe(CppStdSample_shared_ptr_this3 shared_ptr_this3.cpp)
